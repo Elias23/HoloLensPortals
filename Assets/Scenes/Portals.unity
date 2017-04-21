@@ -240,12 +240,12 @@ Prefab:
     - target: {fileID: 114495317991769908, guid: 79fa017b0b235cb41934a2a56009c6cf,
         type: 2}
       propertyPath: IsBeingPlaced
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 114086277871662390, guid: 79fa017b0b235cb41934a2a56009c6cf,
         type: 2}
       propertyPath: IsBeingPlaced
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 64983317802394742, guid: 79fa017b0b235cb41934a2a56009c6cf,
         type: 2}
@@ -332,9 +332,14 @@ Prefab:
         type: 2}
       propertyPath: surfaceMaterial
       value: 
-      objectReference: {fileID: 2100000, guid: 75737e67271928f49a52005076d84d01, type: 2}
+      objectReference: {fileID: 2100000, guid: d698790d3facd3d4289a13fa1243030a, type: 2}
     - target: {fileID: 1000010302963436, guid: 2ed75ffdf9031c94e8bce4b3d17b9928, type: 2}
       propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 114000011154029958, guid: 2ed75ffdf9031c94e8bce4b3d17b9928,
+        type: 2}
+      propertyPath: PhysicsLayer
       value: 8
       objectReference: {fileID: 0}
     m_RemovedComponents:
