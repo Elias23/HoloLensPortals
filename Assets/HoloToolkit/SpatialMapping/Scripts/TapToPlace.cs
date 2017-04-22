@@ -98,8 +98,6 @@ namespace HoloToolkit.Unity.SpatialMapping
                 {
                     // Rotate this object to face the user.
                     Quaternion toQuat = Quaternion.LookRotation(-hitInfo.normal, Vector3.up);
-                    toQuat.x = 0;
-                    toQuat.z = 0;
 
                     // Move this object to where the raycast
                     // hit the Spatial Mapping mesh.
@@ -157,7 +155,7 @@ namespace HoloToolkit.Unity.SpatialMapping
                 Camera.main.cullingMask |= 1 << LayerMask.NameToLayer("Mesh");
                 Debug.Log(gameObject.name + " : Removing existing world anchor if any.");
 
-                //anchorManager.RemoveAnchor(gameObject);
+                anchorManager.RemoveAnchor(gameObject);
             }
             // If the user is not in placing mode, hide the spatial mapping mesh.
             else

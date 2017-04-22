@@ -384,7 +384,8 @@ PlayerSettings:
   webGLUseEmbeddedResources: 0
   webGLUseWasm: 0
   webGLCompressionFormat: 1
-  scriptingDefineSymbols: {}
+  scriptingDefineSymbols:
+    14: 
   platformArchitecture: {}
   scriptingBackend: {}
   incrementalIl2cppBuild: {}
@@ -393,7 +394,7 @@ PlayerSettings:
   m_MobileRenderingPath: 1
   metroPackageName: HoloLensPortals
   metroPackageVersion: 
-  metroCertificatePath: C:\Users\Elias\Documents\Bachelor\HoloLensPortals\Assets\WSATestCertificate.pfx
+  metroCertificatePath: Assets\WSATestCertificate.pfx
   metroCertificatePassword: 
   metroCertificateSubject: DefaultCompany
   metroCertificateIssuer: DefaultCompany

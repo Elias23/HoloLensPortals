@@ -69,23 +69,20 @@ namespace HoloToolkit.Unity.SpatialMapping
                         mesh: storedMeshes[iMesh],
                         objectName: "storedmesh-" + iMesh,
                         parentObject: transform,
-                        meshID: iMesh,
-                        castShadowsOverride: false
-
+                        meshID: iMesh
                         );
-                    if (!anchorStore.Load(storedMeshes[iMesh].name, obj.Object))
-                        Debug.Log("WorldAnchor load failed...");
+#if (UNITY_EDITOR != true)                               
+                    if(!anchorStore.Load(storedMeshes[iMesh].name, obj.Object))Debug.Log("WorldAnchor load failed...");
+#endif
+                    obj.Object.layer = 8;
                     AddSurfaceObject(obj);
+                    Debug.Log("Object Layer" + obj.Object.layer);
 
-                }
-                for (int iMesh = 0; iMesh < storedMeshes.Count; iMesh++)
-                {
-                    transform.GetChild(iMesh).gameObject.layer = 8;
                 }
             }
             catch
             {
-                Debug.Log("Failed to load " + fileName);
+                Debug.Log("Failed to load: \n" + fileName);
             }
         }
         public void Save(string fileName)
@@ -93,7 +90,7 @@ namespace HoloToolkit.Unity.SpatialMapping
             // if the anchor store is not ready then we cannot save the room mesh
             if (anchorStore == null)
                 return;
-
+          
             // delete old relevant anchors
             string[] anchorIds = anchorStore.GetAllIds();
             for (int i = 0; i < anchorIds.Length; i++)
@@ -157,6 +154,8 @@ namespace HoloToolkit.Unity.SpatialMapping
 
             // serialize and save meshes
             MeshSaver.Save(fileName, roomMeshes);
+            Debug.Log("Mesh saved");
+
         }
         private void AttachingAnchor_OnTrackingChanged(WorldAnchor self, bool located)
         {
