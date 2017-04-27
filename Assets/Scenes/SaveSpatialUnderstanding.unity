@@ -263,6 +263,20 @@ Prefab:
       propertyPath: KeywordsAndResponses.Array.data[2].Response.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_StringArgument
       value: Loaded Mesh
       objectReference: {fileID: 0}
+    - target: {fileID: 102000014138650206, guid: 0b20469ea0c7b2945bc2a68947531ead,
+        type: 2}
+      propertyPath: m_Text
+      value: 'Available Voice Commands:
+
+        -Capture Mesh
+
+        -Load Next Scene'
+      objectReference: {fileID: 0}
+    - target: {fileID: 114000013050669732, guid: 0b20469ea0c7b2945bc2a68947531ead,
+        type: 2}
+      propertyPath: TagalongYOffset
+      value: -0.25
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 0b20469ea0c7b2945bc2a68947531ead, type: 2}
   m_IsPrefabParent: 0

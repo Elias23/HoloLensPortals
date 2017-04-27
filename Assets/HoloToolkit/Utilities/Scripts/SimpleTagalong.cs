@@ -15,6 +15,8 @@ namespace HoloToolkit.Unity
         // Simple Tagalongs seek to stay at a fixed distance from the Camera.
         [Tooltip("The distance in meters from the camera for the Tagalong to seek when updating its position.")]
         public float TagalongDistance = 2.0f;
+        [Tooltip("The distance in meters from the camera center on the Y axis")]
+        public float TagalongYOffset = -0.25f;
         [Tooltip("If true, forces the Tagalong to be TagalongDistance from the camera, even if it didn't need to move otherwise.")]
         public bool EnforceDistance = true;
 
@@ -105,7 +107,7 @@ namespace HoloToolkit.Unity
 
             // Calculate a default position where the Tagalong should go. In this
             // case TagalongDistance from the camera along the gaze vector.
-            toPosition = Camera.main.transform.position + Camera.main.transform.forward * TagalongDistance;
+            toPosition = Camera.main.transform.position + Camera.main.transform.forward * TagalongDistance + Camera.main.transform.up * TagalongYOffset;
 
             // Create a Ray and set it's origin to be the default toPosition that
             // was calculated above.

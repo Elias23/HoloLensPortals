@@ -22,7 +22,7 @@ GameObject:
   - component: {fileID: 33691499322710524}
   - component: {fileID: 64856728509583300}
   - component: {fileID: 23463298138020692}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Quad 2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -39,7 +39,7 @@ GameObject:
   - component: {fileID: 4836320244607514}
   - component: {fileID: 20191066438651418}
   - component: {fileID: 124071319984864556}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Portal 2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -58,7 +58,7 @@ GameObject:
   - component: {fileID: 64393397744387850}
   - component: {fileID: 23907999173599862}
   - component: {fileID: 114495317991769908}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Quad
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -92,7 +92,7 @@ GameObject:
   - component: {fileID: 33592716159811182}
   - component: {fileID: 64983317802394742}
   - component: {fileID: 23624629551440344}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Quad 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -109,7 +109,7 @@ GameObject:
   - component: {fileID: 4303158372124610}
   - component: {fileID: 20933732555606092}
   - component: {fileID: 124596948396445134}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Portal 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -128,7 +128,7 @@ GameObject:
   - component: {fileID: 64232057770780294}
   - component: {fileID: 23413233087606498}
   - component: {fileID: 114086277871662390}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Quad (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -157,8 +157,8 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1782095109337442}
   m_LocalRotation: {x: -0, y: -0.26415431, z: -0, w: 0.96448046}
-  m_LocalPosition: {x: -6.2, y: 0.30999997, z: 6.06}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: -6.2, y: 0.30999994, z: 6.06}
+  m_LocalScale: {x: 0.75, y: 0.75, z: 1}
   m_Children:
   - {fileID: 4303158372124610}
   - {fileID: 4767425060981290}
@@ -185,8 +185,8 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1728129555631590}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0.0009999999}
-  m_LocalScale: {x: 1.3, y: 1.3, z: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0.01}
+  m_LocalScale: {x: 1.0999998, y: 1.0999998, z: 1}
   m_Children: []
   m_Father: {fileID: 4146951705153284}
   m_RootOrder: 1
@@ -197,9 +197,9 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1183417186300500}
-  m_LocalRotation: {x: 0, y: 0.7071068, z: 0, w: 0.7071068}
+  m_LocalRotation: {x: 0, y: 0.70710677, z: 0, w: 0.70710677}
   m_LocalPosition: {x: 7.35, y: 0.72999996, z: -3.1}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.75, y: 0.75, z: 1}
   m_Children:
   - {fileID: 4836320244607514}
   - {fileID: 4897989466669082}
@@ -226,8 +226,8 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1890552026102054}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0.0009999999}
-  m_LocalScale: {x: 1.3000001, y: 1.3, z: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0.01}
+  m_LocalScale: {x: 1.0999998, y: 1.0999998, z: 1}
   m_Children: []
   m_Father: {fileID: 4833603474745214}
   m_RootOrder: 1
@@ -241,14 +241,14 @@ Camera:
   m_Enabled: 1
   serializedVersion: 2
   m_ClearFlags: 2
-  m_BackGroundColor: {r: 0, g: 0, b: 0, a: 0}
+  m_BackGroundColor: {r: -0, g: -0, b: -0, a: 0}
   m_NormalizedViewPortRect:
     serializedVersion: 2
     x: 0
     y: 0
     width: 1
     height: 1
-  near clip plane: 0.29999998
+  near clip plane: 0.2999999
   far clip plane: 1000
   field of view: 16
   orthographic: 0
@@ -258,7 +258,7 @@ Camera:
     serializedVersion: 2
     m_Bits: 4294967295
   m_RenderingPath: -1
-  m_TargetTexture: {fileID: 8400000, guid: 04cbad275966e1d4fb3a32de657d0f45, type: 2}
+  m_TargetTexture: {fileID: 8400000, guid: 21edc22713c885b41b9e5f31839a6a42, type: 2}
   m_TargetDisplay: 0
   m_TargetEye: 3
   m_HDR: 0
@@ -282,7 +282,7 @@ Camera:
     y: 0
     width: 1
     height: 1
-  near clip plane: 0.29999998
+  near clip plane: 0.2999999
   far clip plane: 1000
   field of view: 16
   orthographic: 0
@@ -292,7 +292,7 @@ Camera:
     serializedVersion: 2
     m_Bits: 4294967295
   m_RenderingPath: -1
-  m_TargetTexture: {fileID: 8400000, guid: 5e42bf1cc18fc8040958e9f295822cba, type: 2}
+  m_TargetTexture: {fileID: 8400000, guid: 7c2de6610a55bfe40b7d6bc0cb4fb729, type: 2}
   m_TargetDisplay: 0
   m_TargetEye: 3
   m_HDR: 0
@@ -344,7 +344,7 @@ MeshRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_Materials:
-  - {fileID: 2100000, guid: a635f5209b09fe44e947549240690948, type: 2}
+  - {fileID: 2100000, guid: 7521916c4e8b73e4cb31d008acbeabb6, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -375,7 +375,7 @@ MeshRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_Materials:
-  - {fileID: 2100000, guid: d769bc804668a3641811ad31bbe17f3c, type: 2}
+  - {fileID: 2100000, guid: 5fbe16fff2ff5164c91bd288609f63fd, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -488,7 +488,7 @@ MeshCollider:
   m_GameObject: {fileID: 1183417186300500}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 2
   m_Convex: 0
   m_InflateMesh: 0
@@ -502,7 +502,7 @@ MeshCollider:
   m_GameObject: {fileID: 1782095109337442}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 2
   m_Convex: 0
   m_InflateMesh: 0

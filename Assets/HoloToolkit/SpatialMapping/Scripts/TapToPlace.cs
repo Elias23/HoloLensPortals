@@ -109,8 +109,10 @@ namespace HoloToolkit.Unity.SpatialMapping
                     {
                         // Place the parent object as well but keep the focus on the current game object
                         Vector3 currentMovement = hitInfo.point - gameObject.transform.position;
-                        ParentGameObjectToPlace.transform.position += currentMovement;
                         ParentGameObjectToPlace.transform.rotation = toQuat;
+                        ParentGameObjectToPlace.transform.position += currentMovement;
+                        ParentGameObjectToPlace.transform.Translate(new Vector3(0.1f, 0, 0));
+                        
                     }
                     else
                     {
@@ -153,6 +155,7 @@ namespace HoloToolkit.Unity.SpatialMapping
             {
 
                 Camera.main.cullingMask |= 1 << LayerMask.NameToLayer("Mesh");
+                Camera.main.cullingMask |= 1 << this.gameObject.layer;
                 Debug.Log(gameObject.name + " : Removing existing world anchor if any.");
 
                 anchorManager.RemoveAnchor(gameObject);

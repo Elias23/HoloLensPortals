@@ -16,7 +16,7 @@ public class PortalCameraManager : MonoBehaviour
     Vector3 portal2RelativePos;
     Vector3 portal1RelativeDir;
     Vector3 portal2RelativeDir;
-
+    Quaternion tempQuat;
 
     // Use this for initialization
     void Start()
@@ -31,18 +31,27 @@ public class PortalCameraManager : MonoBehaviour
         portal1Camera.localPosition = new Vector3(-1 * portal2RelativePos.x, portal2RelativePos.y, -1 * portal2RelativePos.z);
         portal2Camera.localPosition = new Vector3(-1 * portal1RelativePos.x, portal1RelativePos.y, -1 * portal1RelativePos.z);
 
-        portal1Camera.localRotation = Quaternion.AngleAxis(180.0f, new Vector3(0, 1, 0)) * Quaternion.Inverse(portal2.transform.rotation) * (transform.rotation);
-        portal2Camera.localRotation = Quaternion.AngleAxis(180.0f, new Vector3(0, 1, 0)) * Quaternion.Inverse(portal1.transform.rotation) * (transform.rotation);
+
+        /*TODO remove z axis rotation
+        tempQuat = Quaternion.AngleAxis(180.0f, new Vector3(0, 1, 0)) * Quaternion.Inverse(portal2.transform.rotation) * (transform.rotation);
+        portal1Camera.localRotation = tempQuat;
+        tempQuat = Quaternion.AngleAxis(180.0f, new Vector3(0, 1, 0)) * Quaternion.Inverse(portal1.transform.rotation) * (transform.rotation);
+        portal2Camera.localRotation = tempQuat;
+        portal1Camera.localRotation *= Quaternion.AngleAxis(0f, new Vector3(0, 0, 1));
+        portal2Camera.localRotation *= Quaternion.AngleAxis(0f, new Vector3(0, 0, 1));
+        */
+        portal1Camera.LookAt(portal1.transform);
+        portal2Camera.LookAt(portal2.transform);
 
         Vector4 clipPlane1 = CameraSpacePlane(portal1Camera.GetComponent<Camera>(), portal1.transform.position, portal1.transform.forward, -1.0f);
         Matrix4x4 projection1 = portal1Camera.GetComponent<Camera>().projectionMatrix;
         CalculateObliqueMatrix(ref projection1, clipPlane1);
-        //portal1Camera.GetComponent<Camera>().projectionMatrix = projection1;
+        portal1Camera.GetComponent<Camera>().projectionMatrix = projection1;
 
         Vector4 clipPlane2 = CameraSpacePlane(portal2Camera.GetComponent<Camera>(), portal2.transform.position, portal2.transform.forward, -1.0f);
         Matrix4x4 projection2 = portal2Camera.GetComponent<Camera>().projectionMatrix;
         CalculateObliqueMatrix(ref projection2, clipPlane2);
-        //portal2Camera.GetComponent<Camera>().projectionMatrix = projection2;
+        portal2Camera.GetComponent<Camera>().projectionMatrix = projection2;
 
 
 
@@ -57,19 +66,25 @@ public class PortalCameraManager : MonoBehaviour
         portal1Camera.localPosition = new Vector3(-1 * portal2RelativePos.x, portal2RelativePos.y, -1 * portal2RelativePos.z);
         portal2Camera.localPosition = new Vector3(-1 * portal1RelativePos.x, portal1RelativePos.y, -1 * portal1RelativePos.z);
 
-        portal1Camera.localRotation = Quaternion.AngleAxis(180.0f, new Vector3(0, 1, 0)) * Quaternion.Inverse(portal2.transform.rotation)*(transform.rotation) ;
-        portal2Camera.localRotation = Quaternion.AngleAxis(180.0f, new Vector3(0, 1, 0)) * Quaternion.Inverse(portal1.transform.rotation)*(transform.rotation) ;
+        /*tempQuat = Quaternion.AngleAxis(180.0f, new Vector3(0, 1, 0)) * Quaternion.Inverse(portal2.transform.rotation) * (transform.rotation);
+        portal1Camera.localRotation = tempQuat;
+        tempQuat = Quaternion.AngleAxis(180.0f, new Vector3(0, 1, 0)) * Quaternion.Inverse(portal1.transform.rotation) * (transform.rotation);
+        portal2Camera.localRotation = tempQuat;
+        portal1Camera.localRotation *= Quaternion.AngleAxis(0f, new Vector3(0, 0, 1));
+        portal2Camera.localRotation *= Quaternion.AngleAxis(0f, new Vector3(0, 0, 1));*/
+        portal1Camera.LookAt(portal1.transform);
+        portal2Camera.LookAt(portal2.transform);
 
-        
+
         Vector4 clipPlane1 = CameraSpacePlane(portal1Camera.GetComponent<Camera>(), portal1.transform.position, portal1.transform.forward, -1f);
         Matrix4x4 projection1 = portal1Camera.GetComponent<Camera>().projectionMatrix;
         CalculateObliqueMatrix(ref projection1, clipPlane1);
-        //portal1Camera.GetComponent<Camera>().projectionMatrix = projection1;
+        portal1Camera.GetComponent<Camera>().projectionMatrix = projection1;
 
         Vector4 clipPlane2 = CameraSpacePlane(portal2Camera.GetComponent<Camera>(), portal2.transform.position, portal2.transform.forward, -1f);
         Matrix4x4 projection2 = portal2Camera.GetComponent<Camera>().projectionMatrix;
         CalculateObliqueMatrix(ref projection2, clipPlane2);
-        //portal2Camera.GetComponent<Camera>().projectionMatrix = projection2;
+        portal2Camera.GetComponent<Camera>().projectionMatrix = projection2;
         
 
 

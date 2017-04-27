@@ -220,6 +220,7 @@ namespace HoloToolkit.Unity
                   drawVisualMeshesOverride: DrawProcessedMesh);
 
                 nextSectorData.SpatialCollider = surfaceObject.Collider;
+                surfaceObject.Object.layer = 8;
 
                 AddSurfaceObject(surfaceObject);
 
