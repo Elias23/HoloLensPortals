@@ -110,7 +110,7 @@ namespace HoloToolkit.Unity.SpatialMapping
                         // Place the parent object as well but keep the focus on the current game object
                         Vector3 currentMovement = hitInfo.point - gameObject.transform.position;
                         ParentGameObjectToPlace.transform.rotation = toQuat;
-                        ParentGameObjectToPlace.transform.position += currentMovement;
+                        ParentGameObjectToPlace.transform.position = hitInfo.point;
                         ParentGameObjectToPlace.transform.Translate(new Vector3(0.1f, 0, 0));
                         
                     }
