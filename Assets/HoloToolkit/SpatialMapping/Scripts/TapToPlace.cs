@@ -28,6 +28,9 @@ namespace HoloToolkit.Unity.SpatialMapping
         [Tooltip("Specify the parent game object to be moved on tap, if the immediate parent is not desired.")]
         public GameObject ParentGameObjectToPlace;
 
+        [Tooltip("Specify the distance from the mesh where you want to place the object.")]
+        public float DistanceFromMesh = 0.1f;
+
         /// <summary>
         /// Keeps track of if the user is moving the object or not.
         /// Setting this to true will enable the user to move and place the object in the scene.
@@ -111,8 +114,10 @@ namespace HoloToolkit.Unity.SpatialMapping
                         Vector3 currentMovement = hitInfo.point - gameObject.transform.position;
                         ParentGameObjectToPlace.transform.rotation = toQuat;
                         ParentGameObjectToPlace.transform.position = hitInfo.point;
-                        ParentGameObjectToPlace.transform.Translate(new Vector3(0.1f, 0, 0));
-                        
+                        ParentGameObjectToPlace.transform.Translate(ParentGameObjectToPlace.transform.forward * DistanceFromMesh);
+
+
+
                     }
                     else
                     {
@@ -128,9 +133,17 @@ namespace HoloToolkit.Unity.SpatialMapping
             // On each tap gesture, toggle whether the user is in placing mode.
             IsBeingPlaced = !IsBeingPlaced;
 
+            PortalManager pm = this.gameObject.GetComponent<PortalManager>();
+            bool pair; pair = pm.PairedPortal.GetComponent<PortalManager>().PortalSettings.EnableRender;
+
+
             // If the user is in placing mode, display the spatial mapping mesh.
             if (IsBeingPlaced)
             {
+
+                pm.PortalSettings.EnableRender = false;
+                pair = pm.PairedPortal.GetComponent<PortalManager>().PortalSettings.EnableRender;
+                pm.PairedPortal.GetComponent<PortalManager>().PortalSettings.EnableRender = pm.PortalSettings.EnableRender;
                 Camera.main.cullingMask |= 1 << LayerMask.NameToLayer("Mesh");
 
 
@@ -141,19 +154,25 @@ namespace HoloToolkit.Unity.SpatialMapping
             // If the user is not in placing mode, hide the spatial mapping mesh.
             else
             {
+                pm.PortalSettings.EnableRender = true;
+                pm.PairedPortal.GetComponent<PortalManager>().PortalSettings.EnableRender = pair;
+                pm.PairedPortal.GetComponent<PortalManager>().PortalSettings.EnableRender = pm.PortalSettings.EnableRender;
                 Camera.main.cullingMask &= ~(1 << LayerMask.NameToLayer("Mesh"));
                 // Add world anchor when object placement is done.
                 anchorManager.AttachAnchor(gameObject, SavedAnchorFriendlyName);
             }
         }
-        public void PlaceByVoice() {
+        public void PlaceByVoice()
+        {
             // On each tap gesture, toggle whether the user is in placing mode.
             IsBeingPlaced = !IsBeingPlaced;
-
+            PortalManager pm = this.gameObject.GetComponent<PortalManager>();
+            bool pair = pm.PairedPortal.GetComponent<PortalManager>().PortalSettings.EnableRender;
             // If the user is in placing mode, display the spatial mapping mesh.
             if (IsBeingPlaced)
             {
-
+                pm.PortalSettings.EnableRender = false;
+                pm.PairedPortal.GetComponent<PortalManager>().PortalSettings.EnableRender = pm.PortalSettings.EnableRender;
                 Camera.main.cullingMask |= 1 << LayerMask.NameToLayer("Mesh");
                 Camera.main.cullingMask |= 1 << this.gameObject.layer;
                 Debug.Log(gameObject.name + " : Removing existing world anchor if any.");
@@ -163,6 +182,8 @@ namespace HoloToolkit.Unity.SpatialMapping
             // If the user is not in placing mode, hide the spatial mapping mesh.
             else
             {
+                pm.PortalSettings.EnableRender = true;
+                pm.PairedPortal.GetComponent<PortalManager>().PortalSettings.EnableRender = pm.PortalSettings.EnableRender;
                 Camera.main.cullingMask &= ~(1 << LayerMask.NameToLayer("Mesh"));
                 // Add world anchor when object placement is done.
                 anchorManager.AttachAnchor(gameObject, SavedAnchorFriendlyName);
