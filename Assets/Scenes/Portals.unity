@@ -153,6 +153,50 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f122ca4ae6b527e4798205becf9a0550, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!21 &184133644
+Material:
+  serializedVersion: 6
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_Name: Gater/UV Remap
+  m_Shader: {fileID: 4800000, guid: b680c2f39420847458548a216d96ce3a, type: 3}
+  m_ShaderKeywords: 
+  m_LightmapFlags: 5
+  m_CustomRenderQueue: -1
+  stringTagMap: {}
+  m_SavedProperties:
+    serializedVersion: 2
+    m_TexEnvs:
+    - first:
+        name: _DistorsionPattern
+      second:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - first:
+        name: _MainTex
+      second:
+        m_Texture: {fileID: 1493473722}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    m_Floats:
+    - first:
+        name: _DistorsionPatternSpeedX
+      second: -0.01
+    - first:
+        name: _DistorsionPatternSpeedY
+      second: 0
+    - first:
+        name: _DistorsionPatternTiling
+      second: 1
+    - first:
+        name: _EnableDistorsionPattern
+      second: 0
+    m_Colors:
+    - first:
+        name: _DistorsionPatternColor
+      second: {r: 1, g: 1, b: 1, a: 1}
 --- !u!1001 &252876206
 Prefab:
   m_ObjectHideFlags: 0
@@ -201,7 +245,7 @@ Prefab:
         type: 2}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 537651728}
+      objectReference: {fileID: 184133644}
     - target: {fileID: 114611778767376894, guid: 869fa305735e16145ad5d3113e402307,
         type: 2}
       propertyPath: NullPairedPortalSkybox
@@ -252,7 +296,7 @@ Prefab:
         type: 2}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 1226740784}
+      objectReference: {fileID: 695691721}
     - target: {fileID: 4925113474928534, guid: 869fa305735e16145ad5d3113e402307, type: 2}
       propertyPath: m_LocalRotation.x
       value: -0.013409152
@@ -333,11 +377,11 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4189081427189834, guid: 869fa305735e16145ad5d3113e402307, type: 2}
       propertyPath: m_LocalRotation.y
-      value: -0.000000029802415
+      value: -0.000000029802422
       objectReference: {fileID: 0}
     - target: {fileID: 4335233958127508, guid: 869fa305735e16145ad5d3113e402307, type: 2}
       propertyPath: m_LocalRotation.y
-      value: -0.000000059604794
+      value: -0.00000005960481
       objectReference: {fileID: 0}
     - target: {fileID: 114611778767376894, guid: 869fa305735e16145ad5d3113e402307,
         type: 2}
@@ -656,50 +700,6 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 3eddd1c29199313478dd3f912bfab2ab, type: 2}
   m_IsPrefabParent: 0
---- !u!21 &508649639
-Material:
-  serializedVersion: 6
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_Name: Gater/UV Remap
-  m_Shader: {fileID: 4800000, guid: b680c2f39420847458548a216d96ce3a, type: 3}
-  m_ShaderKeywords: 
-  m_LightmapFlags: 5
-  m_CustomRenderQueue: -1
-  stringTagMap: {}
-  m_SavedProperties:
-    serializedVersion: 2
-    m_TexEnvs:
-    - first:
-        name: _DistorsionPattern
-      second:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - first:
-        name: _MainTex
-      second:
-        m_Texture: {fileID: 1412154656}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    m_Floats:
-    - first:
-        name: _DistorsionPatternSpeedX
-      second: -0.01
-    - first:
-        name: _DistorsionPatternSpeedY
-      second: 0
-    - first:
-        name: _DistorsionPatternTiling
-      second: 1
-    - first:
-        name: _EnableDistorsionPattern
-      second: 0
-    m_Colors:
-    - first:
-        name: _DistorsionPatternColor
-      second: {r: 1, g: 1, b: 1, a: 1}
 --- !u!1001 &532886756
 Prefab:
   m_ObjectHideFlags: 0
@@ -758,7 +758,7 @@ Prefab:
         type: 2}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 508649639}
+      objectReference: {fileID: 1346852516}
     - target: {fileID: 4313736347473812, guid: 3da21ec90da15e344a3bfc2f32c4e03c, type: 2}
       propertyPath: m_LocalScale.x
       value: 1
@@ -800,7 +800,7 @@ Prefab:
         type: 2}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 558388930}
+      objectReference: {fileID: 1694675003}
     - target: {fileID: 4038887017842944, guid: 3da21ec90da15e344a3bfc2f32c4e03c, type: 2}
       propertyPath: m_LocalPosition.z
       value: 0.005
@@ -880,11 +880,11 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4158362873170288, guid: 3da21ec90da15e344a3bfc2f32c4e03c, type: 2}
       propertyPath: m_LocalRotation.y
-      value: -0.000000029802415
+      value: -0.000000029802422
       objectReference: {fileID: 0}
     - target: {fileID: 4585393827091046, guid: 3da21ec90da15e344a3bfc2f32c4e03c, type: 2}
       propertyPath: m_LocalRotation.y
-      value: -0.000000059604794
+      value: -0.00000005960481
       objectReference: {fileID: 0}
     - target: {fileID: 114608877380318504, guid: 3da21ec90da15e344a3bfc2f32c4e03c,
         type: 2}
@@ -961,94 +961,6 @@ Transform:
   m_PrefabParentObject: {fileID: 4313736347473812, guid: 3da21ec90da15e344a3bfc2f32c4e03c,
     type: 2}
   m_PrefabInternal: {fileID: 532886756}
---- !u!21 &537651728
-Material:
-  serializedVersion: 6
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_Name: Gater/UV Remap
-  m_Shader: {fileID: 4800000, guid: b680c2f39420847458548a216d96ce3a, type: 3}
-  m_ShaderKeywords: 
-  m_LightmapFlags: 5
-  m_CustomRenderQueue: -1
-  stringTagMap: {}
-  m_SavedProperties:
-    serializedVersion: 2
-    m_TexEnvs:
-    - first:
-        name: _DistorsionPattern
-      second:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - first:
-        name: _MainTex
-      second:
-        m_Texture: {fileID: 704854516}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    m_Floats:
-    - first:
-        name: _DistorsionPatternSpeedX
-      second: -0.01
-    - first:
-        name: _DistorsionPatternSpeedY
-      second: 0
-    - first:
-        name: _DistorsionPatternTiling
-      second: 1
-    - first:
-        name: _EnableDistorsionPattern
-      second: 0
-    m_Colors:
-    - first:
-        name: _DistorsionPatternColor
-      second: {r: 1, g: 1, b: 1, a: 1}
---- !u!21 &558388930
-Material:
-  serializedVersion: 6
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_Name: Gater/UV Remap
-  m_Shader: {fileID: 4800000, guid: b680c2f39420847458548a216d96ce3a, type: 3}
-  m_ShaderKeywords: 
-  m_LightmapFlags: 5
-  m_CustomRenderQueue: -1
-  stringTagMap: {}
-  m_SavedProperties:
-    serializedVersion: 2
-    m_TexEnvs:
-    - first:
-        name: _DistorsionPattern
-      second:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - first:
-        name: _MainTex
-      second:
-        m_Texture: {fileID: 902488150}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    m_Floats:
-    - first:
-        name: _DistorsionPatternSpeedX
-      second: 0
-    - first:
-        name: _DistorsionPatternSpeedY
-      second: 0
-    - first:
-        name: _DistorsionPatternTiling
-      second: 1
-    - first:
-        name: _EnableDistorsionPattern
-      second: 0
-    m_Colors:
-    - first:
-        name: _DistorsionPatternColor
-      second: {r: 1, g: 0, b: 0, a: 1}
 --- !u!114 &616469174
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1246,6 +1158,50 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 659032721}
   m_Mesh: {fileID: 10210, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!21 &695691721
+Material:
+  serializedVersion: 6
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_Name: Gater/UV Remap
+  m_Shader: {fileID: 4800000, guid: b680c2f39420847458548a216d96ce3a, type: 3}
+  m_ShaderKeywords: 
+  m_LightmapFlags: 5
+  m_CustomRenderQueue: -1
+  stringTagMap: {}
+  m_SavedProperties:
+    serializedVersion: 2
+    m_TexEnvs:
+    - first:
+        name: _DistorsionPattern
+      second:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - first:
+        name: _MainTex
+      second:
+        m_Texture: {fileID: 1081682837}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    m_Floats:
+    - first:
+        name: _DistorsionPatternSpeedX
+      second: 0
+    - first:
+        name: _DistorsionPatternSpeedY
+      second: 0
+    - first:
+        name: _DistorsionPatternTiling
+      second: 1
+    - first:
+        name: _EnableDistorsionPattern
+      second: 0
+    m_Colors:
+    - first:
+        name: _DistorsionPatternColor
+      second: {r: 1, g: 0, b: 0, a: 1}
 --- !u!1 &704309544
 GameObject:
   m_ObjectHideFlags: 0
@@ -1335,28 +1291,6 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 704309544}
   m_Mesh: {fileID: 10210, guid: 0000000000000000e000000000000000, type: 0}
---- !u!84 &704854516
-RenderTexture:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_Name: SquareGate2 RenderTexture 0
-  m_ImageContentsHash:
-    serializedVersion: 2
-    Hash: 00000000000000000000000000000000
-  m_Width: 1024
-  m_Height: 1024
-  m_AntiAliasing: 1
-  m_DepthFormat: 1
-  m_ColorFormat: 0
-  m_MipMap: 0
-  m_GenerateMips: 1
-  m_SRGB: 0
-  m_TextureSettings:
-    m_FilterMode: 1
-    m_Aniso: 1
-    m_MipBias: 0
-    m_WrapMode: 1
 --- !u!1 &718138053
 GameObject:
   m_ObjectHideFlags: 0
@@ -1429,28 +1363,6 @@ Transform:
   m_Father: {fileID: 252876210}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!84 &733218069
-RenderTexture:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_Name: SquareGate2 RenderTexture 1
-  m_ImageContentsHash:
-    serializedVersion: 2
-    Hash: 00000000000000000000000000000000
-  m_Width: 1024
-  m_Height: 1024
-  m_AntiAliasing: 1
-  m_DepthFormat: 1
-  m_ColorFormat: 0
-  m_MipMap: 0
-  m_GenerateMips: 1
-  m_SRGB: 0
-  m_TextureSettings:
-    m_FilterMode: 1
-    m_Aniso: 1
-    m_MipBias: 0
-    m_WrapMode: 1
 --- !u!1 &770069624
 GameObject:
   m_ObjectHideFlags: 0
@@ -1687,28 +1599,6 @@ Camera:
   m_StereoConvergence: 10
   m_StereoSeparation: 0.022
   m_StereoMirrorMode: 0
---- !u!84 &902488150
-RenderTexture:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_Name: SquareGate1 RenderTexture 1
-  m_ImageContentsHash:
-    serializedVersion: 2
-    Hash: 00000000000000000000000000000000
-  m_Width: 1024
-  m_Height: 1024
-  m_AntiAliasing: 1
-  m_DepthFormat: 1
-  m_ColorFormat: 0
-  m_MipMap: 0
-  m_GenerateMips: 1
-  m_SRGB: 0
-  m_TextureSettings:
-    m_FilterMode: 1
-    m_Aniso: 1
-    m_MipBias: 0
-    m_WrapMode: 1
 --- !u!1 &952271813
 GameObject:
   m_ObjectHideFlags: 0
@@ -1781,6 +1671,28 @@ Transform:
   m_Father: {fileID: 532886760}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!84 &1042134631
+RenderTexture:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_Name: SquareGate1 RenderTexture 0
+  m_ImageContentsHash:
+    serializedVersion: 2
+    Hash: 00000000000000000000000000000000
+  m_Width: 1024
+  m_Height: 1024
+  m_AntiAliasing: 1
+  m_DepthFormat: 1
+  m_ColorFormat: 0
+  m_MipMap: 0
+  m_GenerateMips: 1
+  m_SRGB: 0
+  m_TextureSettings:
+    m_FilterMode: 1
+    m_Aniso: 1
+    m_MipBias: 0
+    m_WrapMode: 1
 --- !u!1 &1075401999 stripped
 GameObject:
   m_PrefabParentObject: {fileID: 1000013332442620, guid: 0b20469ea0c7b2945bc2a68947531ead,
@@ -1797,6 +1709,28 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7948f93fce2f6144a9638a0fb3d884bc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!84 &1081682837
+RenderTexture:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_Name: SquareGate2 RenderTexture 1
+  m_ImageContentsHash:
+    serializedVersion: 2
+    Hash: 00000000000000000000000000000000
+  m_Width: 1024
+  m_Height: 1024
+  m_AntiAliasing: 1
+  m_DepthFormat: 1
+  m_ColorFormat: 0
+  m_MipMap: 0
+  m_GenerateMips: 1
+  m_SRGB: 0
+  m_TextureSettings:
+    m_FilterMode: 1
+    m_Aniso: 1
+    m_MipBias: 0
+    m_WrapMode: 1
 --- !u!1 &1222737439
 GameObject:
   m_ObjectHideFlags: 0
@@ -1869,7 +1803,7 @@ Transform:
   m_Father: {fileID: 252876210}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!21 &1226740784
+--- !u!21 &1346852516
 Material:
   serializedVersion: 6
   m_ObjectHideFlags: 0
@@ -1893,13 +1827,13 @@ Material:
     - first:
         name: _MainTex
       second:
-        m_Texture: {fileID: 733218069}
+        m_Texture: {fileID: 1042134631}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     m_Floats:
     - first:
         name: _DistorsionPatternSpeedX
-      second: 0
+      second: -0.01
     - first:
         name: _DistorsionPatternSpeedY
       second: 0
@@ -1912,29 +1846,7 @@ Material:
     m_Colors:
     - first:
         name: _DistorsionPatternColor
-      second: {r: 1, g: 0, b: 0, a: 1}
---- !u!84 &1412154656
-RenderTexture:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_Name: SquareGate1 RenderTexture 0
-  m_ImageContentsHash:
-    serializedVersion: 2
-    Hash: 00000000000000000000000000000000
-  m_Width: 1024
-  m_Height: 1024
-  m_AntiAliasing: 1
-  m_DepthFormat: 1
-  m_ColorFormat: 0
-  m_MipMap: 0
-  m_GenerateMips: 1
-  m_SRGB: 0
-  m_TextureSettings:
-    m_FilterMode: 1
-    m_Aniso: 1
-    m_MipBias: 0
-    m_WrapMode: 1
+      second: {r: 1, g: 1, b: 1, a: 1}
 --- !u!1001 &1485257462
 Prefab:
   m_ObjectHideFlags: 0
@@ -2112,6 +2024,28 @@ MonoBehaviour:
   MeshFileName: SpatialUnderstandingMesh
   LoadFileKey: 108
   SaveFileKey: 115
+--- !u!84 &1493473722
+RenderTexture:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_Name: SquareGate2 RenderTexture 0
+  m_ImageContentsHash:
+    serializedVersion: 2
+    Hash: 00000000000000000000000000000000
+  m_Width: 1024
+  m_Height: 1024
+  m_AntiAliasing: 1
+  m_DepthFormat: 1
+  m_ColorFormat: 0
+  m_MipMap: 0
+  m_GenerateMips: 1
+  m_SRGB: 0
+  m_TextureSettings:
+    m_FilterMode: 1
+    m_Aniso: 1
+    m_MipBias: 0
+    m_WrapMode: 1
 --- !u!1 &1575888307
 GameObject:
   m_ObjectHideFlags: 0
@@ -2184,6 +2118,28 @@ Transform:
   m_Father: {fileID: 532886760}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!84 &1616982226
+RenderTexture:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_Name: SquareGate1 RenderTexture 1
+  m_ImageContentsHash:
+    serializedVersion: 2
+    Hash: 00000000000000000000000000000000
+  m_Width: 1024
+  m_Height: 1024
+  m_AntiAliasing: 1
+  m_DepthFormat: 1
+  m_ColorFormat: 0
+  m_MipMap: 0
+  m_GenerateMips: 1
+  m_SRGB: 0
+  m_TextureSettings:
+    m_FilterMode: 1
+    m_Aniso: 1
+    m_MipBias: 0
+    m_WrapMode: 1
 --- !u!1001 &1657814445
 Prefab:
   m_ObjectHideFlags: 0
@@ -2371,6 +2327,50 @@ Transform:
   m_Father: {fileID: 252876210}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!21 &1694675003
+Material:
+  serializedVersion: 6
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_Name: Gater/UV Remap
+  m_Shader: {fileID: 4800000, guid: b680c2f39420847458548a216d96ce3a, type: 3}
+  m_ShaderKeywords: 
+  m_LightmapFlags: 5
+  m_CustomRenderQueue: -1
+  stringTagMap: {}
+  m_SavedProperties:
+    serializedVersion: 2
+    m_TexEnvs:
+    - first:
+        name: _DistorsionPattern
+      second:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - first:
+        name: _MainTex
+      second:
+        m_Texture: {fileID: 1616982226}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    m_Floats:
+    - first:
+        name: _DistorsionPatternSpeedX
+      second: 0
+    - first:
+        name: _DistorsionPatternSpeedY
+      second: 0
+    - first:
+        name: _DistorsionPatternTiling
+      second: 1
+    - first:
+        name: _EnableDistorsionPattern
+      second: 0
+    m_Colors:
+    - first:
+        name: _DistorsionPatternColor
+      second: {r: 1, g: 0, b: 0, a: 1}
 --- !u!1 &1798241955
 GameObject:
   m_ObjectHideFlags: 0
@@ -2611,7 +2611,7 @@ Prefab:
     - target: {fileID: 114000012919351050, guid: 0b20469ea0c7b2945bc2a68947531ead,
         type: 2}
       propertyPath: KeywordsAndResponses.Array.data[0].Response.m_PersistentCalls.m_Calls.Array.size
-      value: 3
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 114000012919351050, guid: 0b20469ea0c7b2945bc2a68947531ead,
         type: 2}
@@ -2949,6 +2949,31 @@ Prefab:
     - target: {fileID: 114000012919351050, guid: 0b20469ea0c7b2945bc2a68947531ead,
         type: 2}
       propertyPath: KeywordsAndResponses.Array.data[3].Response.m_PersistentCalls.m_Calls.Array.data[2].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 114000012919351050, guid: 0b20469ea0c7b2945bc2a68947531ead,
+        type: 2}
+      propertyPath: KeywordsAndResponses.Array.data[0].Response.m_PersistentCalls.m_Calls.Array.data[3].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114000012919351050, guid: 0b20469ea0c7b2945bc2a68947531ead,
+        type: 2}
+      propertyPath: KeywordsAndResponses.Array.data[0].Response.m_PersistentCalls.m_Calls.Array.data[3].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 114000012919351050, guid: 0b20469ea0c7b2945bc2a68947531ead,
+        type: 2}
+      propertyPath: KeywordsAndResponses.Array.data[0].Response.m_PersistentCalls.m_Calls.Array.data[3].m_Target
+      value: 
+      objectReference: {fileID: 1485257465}
+    - target: {fileID: 114000012919351050, guid: 0b20469ea0c7b2945bc2a68947531ead,
+        type: 2}
+      propertyPath: KeywordsAndResponses.Array.data[0].Response.m_PersistentCalls.m_Calls.Array.data[3].m_MethodName
+      value: StopObserver
+      objectReference: {fileID: 0}
+    - target: {fileID: 114000012919351050, guid: 0b20469ea0c7b2945bc2a68947531ead,
+        type: 2}
+      propertyPath: KeywordsAndResponses.Array.data[0].Response.m_PersistentCalls.m_Calls.Array.data[3].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     m_RemovedComponents: []
