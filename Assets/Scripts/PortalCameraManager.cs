@@ -25,23 +25,18 @@ public class PortalCameraManager : MonoBehaviour
         portal1Camera = portal1.transform.GetChild(0);
         portal2Camera = portal2.transform.GetChild(0);
 
-        portal1RelativePos = portal1.transform.InverseTransformPoint(this.transform.position);
-        portal2RelativePos = portal2.transform.InverseTransformPoint(this.transform.position);
-
-        portal1Camera.localPosition = new Vector3(-1 * portal2RelativePos.x, portal2RelativePos.y, -1 * portal2RelativePos.z);
-        portal2Camera.localPosition = new Vector3(-1 * portal1RelativePos.x, portal1RelativePos.y, -1 * portal1RelativePos.z);
+        portal1Camera.localPosition = Quaternion.Euler(0,180,0) * portal1.transform.InverseTransformPoint(this.transform.position);
+        portal2Camera.localPosition = Quaternion.Euler(0,180,0) * portal2.transform.InverseTransformPoint(this.transform.position);
 
 
-        /*TODO remove z axis rotation
-        tempQuat = Quaternion.AngleAxis(180.0f, new Vector3(0, 1, 0)) * Quaternion.Inverse(portal2.transform.rotation) * (transform.rotation);
+        //TODO remove z axis rotation
+        tempQuat = Quaternion.Euler(0, 180, 0) * Quaternion.Inverse(portal2.transform.rotation) * (transform.rotation);
+        tempQuat = Quaternion.Euler(tempQuat.eulerAngles.x, tempQuat.eulerAngles.y, 0);
         portal1Camera.localRotation = tempQuat;
-        tempQuat = Quaternion.AngleAxis(180.0f, new Vector3(0, 1, 0)) * Quaternion.Inverse(portal1.transform.rotation) * (transform.rotation);
+        tempQuat = Quaternion.Euler(0, 180, 0) * Quaternion.Inverse(portal1.transform.rotation) * (transform.rotation);
+        tempQuat = Quaternion.Euler(tempQuat.eulerAngles.x, tempQuat.eulerAngles.y, 0);
         portal2Camera.localRotation = tempQuat;
-        portal1Camera.localRotation *= Quaternion.AngleAxis(0f, new Vector3(0, 0, 1));
-        portal2Camera.localRotation *= Quaternion.AngleAxis(0f, new Vector3(0, 0, 1));
-        */
-        portal1Camera.LookAt(portal1.transform);
-        portal2Camera.LookAt(portal2.transform);
+
 
         Vector4 clipPlane1 = CameraSpacePlane(portal1Camera.GetComponent<Camera>(), portal1.transform.position, portal1.transform.forward, -1.0f);
         Matrix4x4 projection1 = portal1Camera.GetComponent<Camera>().projectionMatrix;
@@ -63,17 +58,15 @@ public class PortalCameraManager : MonoBehaviour
         portal1RelativePos = portal1.transform.InverseTransformPoint(this.transform.position);
         portal2RelativePos = portal2.transform.InverseTransformPoint(this.transform.position);
 
-        portal1Camera.localPosition = new Vector3(-1 * portal2RelativePos.x, portal2RelativePos.y, -1 * portal2RelativePos.z);
-        portal2Camera.localPosition = new Vector3(-1 * portal1RelativePos.x, portal1RelativePos.y, -1 * portal1RelativePos.z);
+        portal1Camera.localPosition = Quaternion.Euler(0, 180, 0) * portal1.transform.InverseTransformPoint(this.transform.position);
+        portal2Camera.localPosition = Quaternion.Euler(0, 180, 0) * portal2.transform.InverseTransformPoint(this.transform.position);
 
-        /*tempQuat = Quaternion.AngleAxis(180.0f, new Vector3(0, 1, 0)) * Quaternion.Inverse(portal2.transform.rotation) * (transform.rotation);
+        tempQuat = Quaternion.Euler(0, 180, 0) * Quaternion.Inverse(portal2.transform.rotation) * (transform.rotation);
+        tempQuat = Quaternion.Euler(tempQuat.eulerAngles.x, tempQuat.eulerAngles.y, 0);
         portal1Camera.localRotation = tempQuat;
-        tempQuat = Quaternion.AngleAxis(180.0f, new Vector3(0, 1, 0)) * Quaternion.Inverse(portal1.transform.rotation) * (transform.rotation);
+        tempQuat = Quaternion.Euler(0, 180, 0) * Quaternion.Inverse(portal1.transform.rotation) * (transform.rotation);
+        tempQuat = Quaternion.Euler(tempQuat.eulerAngles.x, tempQuat.eulerAngles.y, 0);
         portal2Camera.localRotation = tempQuat;
-        portal1Camera.localRotation *= Quaternion.AngleAxis(0f, new Vector3(0, 0, 1));
-        portal2Camera.localRotation *= Quaternion.AngleAxis(0f, new Vector3(0, 0, 1));*/
-        portal1Camera.LookAt(portal1.transform.forward);
-        portal2Camera.LookAt(portal2.transform.forward);
 
 
         Vector4 clipPlane1 = CameraSpacePlane(portal1Camera.GetComponent<Camera>(), portal1.transform.position, portal1.transform.forward, -1f);
