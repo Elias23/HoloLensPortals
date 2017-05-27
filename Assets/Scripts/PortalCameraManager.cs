@@ -25,8 +25,8 @@ public class PortalCameraManager : MonoBehaviour
         portal1Camera = portal1.transform.GetChild(0);
         portal2Camera = portal2.transform.GetChild(0);
 
-        portal1Camera.localPosition = Quaternion.Euler(0,180,0) * portal1.transform.InverseTransformPoint(this.transform.position);
-        portal2Camera.localPosition = Quaternion.Euler(0,180,0) * portal2.transform.InverseTransformPoint(this.transform.position);
+        portal1Camera.localPosition = Quaternion.Euler(0,180,0) * portal2.transform.InverseTransformPoint(this.transform.position);
+        portal2Camera.localPosition = Quaternion.Euler(0,180,0) * portal1.transform.InverseTransformPoint(this.transform.position);
 
 
         //TODO remove z axis rotation
@@ -55,11 +55,9 @@ public class PortalCameraManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        portal1RelativePos = portal1.transform.InverseTransformPoint(this.transform.position);
-        portal2RelativePos = portal2.transform.InverseTransformPoint(this.transform.position);
-
-        portal1Camera.localPosition = Quaternion.Euler(0, 180, 0) * portal1.transform.InverseTransformPoint(this.transform.position);
-        portal2Camera.localPosition = Quaternion.Euler(0, 180, 0) * portal2.transform.InverseTransformPoint(this.transform.position);
+		
+        portal1Camera.localPosition = Quaternion.Euler(0,180,0) * portal2.transform.InverseTransformPoint(this.transform.position);
+        portal2Camera.localPosition = Quaternion.Euler(0,180,0) * portal1.transform.InverseTransformPoint(this.transform.position);
 
         tempQuat = Quaternion.Euler(0, 180, 0) * Quaternion.Inverse(portal2.transform.rotation) * (transform.rotation);
         tempQuat = Quaternion.Euler(tempQuat.eulerAngles.x, tempQuat.eulerAngles.y, 0);
