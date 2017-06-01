@@ -12,7 +12,7 @@ using System.Collections;
 
 [RequireComponent (typeof(MeshFilter))]
 [RequireComponent (typeof(MeshRenderer))]
-//[RequireComponent (typeof(Rigidbody))]
+[RequireComponent (typeof(Rigidbody))]
 
 public class PortalManager : MonoBehaviour {
 	//Public vars and correlated
@@ -106,12 +106,12 @@ public class PortalManager : MonoBehaviour {
 
     private void Start()
     {
-        CubePos = new Vector3[5];
-        CubeRot = new Quaternion[5];
+        CubePos = new Vector3[4];
+        CubeRot = new Quaternion[4];
         int i = 0;
         for (int k = 0; k < transform.GetComponentsInChildren<Transform>().Length; k++)
         {
-            if (transform.GetComponentsInChildren<Transform>()[k].name.Contains("Cube"))
+            if (transform.GetComponentInChildren<Transform>().name == "CubeLeft" || transform.GetComponentInChildren<Transform>().name == "CubeRight"|| transform.GetComponentInChildren<Transform>().name == "CubeUp"|| transform.GetComponentInChildren<Transform>().name == "CubeDown")
             {
                 CubePos[i] = transform.GetComponentsInChildren<Transform>()[k].localPosition;
                 CubeRot[i] = transform.GetComponentsInChildren<Transform>()[k].localRotation;
@@ -154,14 +154,14 @@ public class PortalManager : MonoBehaviour {
 		GetComponent<MeshRenderer> ().shadowCastingMode = UnityEngine.Rendering.ShadowCastingMode.Off;
 		GetComponent<MeshRenderer> ().receiveShadows = false;
 		GetComponent<MeshRenderer> ().sharedMaterial = PortalMaterials [0];
-		/*GetComponent<Rigidbody> ().mass = 1;
+		GetComponent<Rigidbody> ().mass = 1;
 		GetComponent<Rigidbody> ().drag = 0;
 		GetComponent<Rigidbody> ().angularDrag = 0;
 		GetComponent<Rigidbody> ().useGravity = false;
 		GetComponent<Rigidbody> ().isKinematic = true;
 		GetComponent<Rigidbody> ().interpolation = RigidbodyInterpolation.None;
 		GetComponent<Rigidbody> ().collisionDetectionMode = CollisionDetectionMode.ContinuousDynamic;
-		GetComponent<Rigidbody> ().constraints = RigidbodyConstraints.None;*/
+		GetComponent<Rigidbody> ().constraints = RigidbodyConstraints.None;
 		if (GetComponent<MeshCollider> ()) {
 			GetComponent<MeshCollider> ().convex = true;
 			GetComponent<MeshCollider> ().sharedMaterial = null;
@@ -172,8 +172,12 @@ public class PortalManager : MonoBehaviour {
 			for (int j = 0; j < PortalFunctionality.ExcludedObjsFromTrigger.Length; j++)
 				if (PortalFunctionality.ExcludedObjsFromTrigger [j].Obj) {
 					Physics.IgnoreCollision (transform.GetComponent<Collider> (), PortalFunctionality.ExcludedObjsFromTrigger [j].Obj.GetComponent<Collider> (), true);
-
-					if (!PortalFunctionality.ExcludedObjsFromTrigger [j].Obj.GetComponent<Collider> ())
+                    //also consider child objects
+                    foreach (Collider coll in PortalFunctionality.ExcludedObjsFromTrigger[j].Obj.GetComponentsInChildren<Collider>())
+                    {
+                        Physics.IgnoreCollision(transform.GetComponent<Collider>(), coll, true);
+                    }
+                    if (!PortalFunctionality.ExcludedObjsFromTrigger [j].Obj.GetComponent<Collider> ())
 						Debug.LogError ("One excluded wall doesn't have a collider component");
 				}
 
@@ -219,7 +223,7 @@ public class PortalManager : MonoBehaviour {
 							PairedPortal = FindObjectsOfType<Transform> () [i].gameObject;
 		} else {
 			if (!InGameCamera) {
-				//ResetVars (false); //Reset arrays elements of the required objects for teleport, if game camera variable is null and any object is still colliding with the portal
+				ResetVars (false); //Reset arrays elements of the required objects for teleport, if game camera variable is null and any object is still colliding with the portal
 
 				InGameCamera = Camera.main; //Fill empty "InGameCamera" variable with main camera
 			} else {
@@ -227,13 +231,32 @@ public class PortalManager : MonoBehaviour {
                 int l = 0;
                 for (int k = 0; k < transform.GetComponentsInChildren<Transform>().Length; k++)
                 {
-                    if (transform.GetComponentsInChildren<Transform>()[k].name.Contains("Cube"))
+                    if (transform.GetComponentInChildren<Transform>().name == "CubeLeft" || transform.GetComponentInChildren<Transform>().name == "CubeRight" || transform.GetComponentInChildren<Transform>().name == "CubeUp" || transform.GetComponentInChildren<Transform>().name == "CubeDown")
                     {
                         transform.GetComponentsInChildren<Transform>()[k].localPosition = CubePos[l];
                         transform.GetComponentsInChildren<Transform>()[k].localRotation = CubeRot[l];
                         l++;
                     }
                 }
+
+                if (PortalFunctionality.ExcludedObjsFromTrigger.Length > 0)
+                {
+                    for (int j = 0; j < PortalFunctionality.ExcludedObjsFromTrigger.Length; j++)
+                    {
+                        if (PortalFunctionality.ExcludedObjsFromTrigger[j].Obj)
+                        {
+                            Physics.IgnoreCollision(transform.GetComponent<Collider>(), PortalFunctionality.ExcludedObjsFromTrigger[j].Obj.GetComponent<Collider>(), true);
+                            //also consider child objects
+                            foreach (Collider coll in PortalFunctionality.ExcludedObjsFromTrigger[j].Obj.GetComponentsInChildren<Collider>())
+                            {
+                                Physics.IgnoreCollision(transform.GetComponent<Collider>(), coll, true);
+                            }
+                            if (!PortalFunctionality.ExcludedObjsFromTrigger[j].Obj.GetComponent<Collider>())
+                                Debug.LogError("One excluded wall doesn't have a collider component");
+                        }
+                    }
+                }
+
 
                 ClearPairedPortal = true;
 
@@ -469,7 +492,7 @@ public class PortalManager : MonoBehaviour {
 			}
 		}
 	}
-    /*
+    
 	class InitMaterialsList { public Material[] Materials; }
 	private GameObject[] CollidedObjs = new GameObject[0];
 	private string[] CollidedObjsInitName = new string[0];
@@ -487,7 +510,7 @@ public class PortalManager : MonoBehaviour {
 	private bool[] ContinueTriggerEvents = new bool[0];
 	[HideInInspector] public bool CollidedObjsExternalParent;
 	[HideInInspector] public int EnterTriggerTimes;
-    /*
+    
 	void OnTriggerEnter (Collider collision) {
 		//Disable collision with objects excluded from trigger during teleport
 		if (PortalFunctionality.ExcludedObjsFromTrigger.Length > 0)
@@ -894,5 +917,5 @@ public class PortalManager : MonoBehaviour {
 		AsyncOperation AsyncLoad = SceneManager.LoadSceneAsync (PortalFunctionality.SceneAsyncLoad.SceneIndex);
 
 		yield return AsyncLoad;
-	}*/
+	}
 }

@@ -149,7 +149,7 @@ namespace HoloToolkit.Unity.SpatialMapping
 
                 Debug.Log(gameObject.name + " : Removing existing world anchor if any.");
 
-                anchorManager.RemoveAnchor(gameObject);
+                //anchorManager.RemoveAnchor(gameObject);
             }
             // If the user is not in placing mode, hide the spatial mapping mesh.
             else
@@ -159,7 +159,7 @@ namespace HoloToolkit.Unity.SpatialMapping
                 pm.PairedPortal.GetComponent<PortalManager>().PortalSettings.EnableRender = pm.PortalSettings.EnableRender;
                 Camera.main.cullingMask &= ~(1 << LayerMask.NameToLayer("Mesh"));
                 // Add world anchor when object placement is done.
-                anchorManager.AttachAnchor(gameObject, SavedAnchorFriendlyName);
+                //anchorManager.AttachAnchor(gameObject, SavedAnchorFriendlyName);
             }
         }
         public void PlaceByVoice()
@@ -177,7 +177,7 @@ namespace HoloToolkit.Unity.SpatialMapping
                 Camera.main.cullingMask |= 1 << this.gameObject.layer;
                 Debug.Log(gameObject.name + " : Removing existing world anchor if any.");
 
-                anchorManager.RemoveAnchor(gameObject);
+                //anchorManager.RemoveAnchor(gameObject);
             }
             // If the user is not in placing mode, hide the spatial mapping mesh.
             else
@@ -186,7 +186,7 @@ namespace HoloToolkit.Unity.SpatialMapping
                 pm.PairedPortal.GetComponent<PortalManager>().PortalSettings.EnableRender = pm.PortalSettings.EnableRender;
                 Camera.main.cullingMask &= ~(1 << LayerMask.NameToLayer("Mesh"));
                 // Add world anchor when object placement is done.
-                anchorManager.AttachAnchor(gameObject, SavedAnchorFriendlyName);
+                //anchorManager.AttachAnchor(gameObject, SavedAnchorFriendlyName);
             }
         }
         private void DetermineParent()
