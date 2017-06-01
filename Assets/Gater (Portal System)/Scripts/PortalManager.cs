@@ -106,16 +106,17 @@ public class PortalManager : MonoBehaviour {
 
     private void Start()
     {
-        CubePos = new Vector3[5];
-        CubeRot = new Quaternion[5];
+        CubePos = new Vector3[4];
+        CubeRot = new Quaternion[4];
         int i = 0;
         for (int k = 0; k < transform.GetComponentsInChildren<Transform>().Length; k++)
         {
             if (transform.GetComponentsInChildren<Transform>()[k].name.Contains("Cube"))
-            {
-                CubePos[i] = transform.GetComponentsInChildren<Transform>()[k].localPosition;
-                CubeRot[i] = transform.GetComponentsInChildren<Transform>()[k].localRotation;
-                i++;
+                if (transform.GetComponentInChildren<Transform>().name == "CubeLeft" || transform.GetComponentInChildren<Transform>().name == "CubeRight" || transform.GetComponentInChildren<Transform>().name == "CubeUp" || transform.GetComponentInChildren<Transform>().name == "CubeDown")
+                {
+                    CubePos[i] = transform.GetComponentsInChildren<Transform>()[k].localPosition;
+                    CubeRot[i] = transform.GetComponentsInChildren<Transform>()[k].localRotation;
+                    i++;
             }
         }
     }
@@ -227,7 +228,7 @@ public class PortalManager : MonoBehaviour {
                 int l = 0;
                 for (int k = 0; k < transform.GetComponentsInChildren<Transform>().Length; k++)
                 {
-                    if (transform.GetComponentsInChildren<Transform>()[k].name.Contains("Cube"))
+                    if (transform.GetComponentInChildren<Transform>().name == "CubeLeft" || transform.GetComponentInChildren<Transform>().name == "CubeRight" || transform.GetComponentInChildren<Transform>().name == "CubeUp" || transform.GetComponentInChildren<Transform>().name == "CubeDown")
                     {
                         transform.GetComponentsInChildren<Transform>()[k].localPosition = CubePos[l];
                         transform.GetComponentsInChildren<Transform>()[k].localRotation = CubeRot[l];

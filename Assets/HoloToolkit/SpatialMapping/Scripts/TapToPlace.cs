@@ -116,8 +116,6 @@ namespace HoloToolkit.Unity.SpatialMapping
                         ParentGameObjectToPlace.transform.position = hitInfo.point;
                         ParentGameObjectToPlace.transform.Translate(ParentGameObjectToPlace.transform.forward * DistanceFromMesh);
 
-
-
                     }
                     else
                     {
