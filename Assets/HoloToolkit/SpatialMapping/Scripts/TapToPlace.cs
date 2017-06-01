@@ -67,7 +67,7 @@ namespace HoloToolkit.Unity.SpatialMapping
 
             if (anchorManager != null && spatialMappingManager != null)
             {
-                anchorManager.AttachAnchor(gameObject, SavedAnchorFriendlyName);
+                //anchorManager.AttachAnchor(gameObject, SavedAnchorFriendlyName);
             }
             else
             {
@@ -147,8 +147,7 @@ namespace HoloToolkit.Unity.SpatialMapping
                 Camera.main.cullingMask |= 1 << LayerMask.NameToLayer("Mesh");
 
 
-                Debug.Log(gameObject.name + " : Removing existing world anchor if any.");
-
+                //Debug.Log(gameObject.name + " : Removing existing world anchor if any.");
                 //anchorManager.RemoveAnchor(gameObject);
             }
             // If the user is not in placing mode, hide the spatial mapping mesh.
@@ -175,8 +174,7 @@ namespace HoloToolkit.Unity.SpatialMapping
                 pm.PairedPortal.GetComponent<PortalManager>().PortalSettings.EnableRender = pm.PortalSettings.EnableRender;
                 Camera.main.cullingMask |= 1 << LayerMask.NameToLayer("Mesh");
                 Camera.main.cullingMask |= 1 << this.gameObject.layer;
-                Debug.Log(gameObject.name + " : Removing existing world anchor if any.");
-
+                //Debug.Log(gameObject.name + " : Removing existing world anchor if any.");
                 //anchorManager.RemoveAnchor(gameObject);
             }
             // If the user is not in placing mode, hide the spatial mapping mesh.
