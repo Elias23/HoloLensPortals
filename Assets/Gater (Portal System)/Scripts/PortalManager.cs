@@ -442,7 +442,7 @@ public class PortalManager : MonoBehaviour {
 											PortalCamObjs [j].GetComponent<Camera> ().cullingMask = 0;
 										else {
                                             //CUSTOM
-											PortalCamObjs [j].GetComponent<Camera> ().cullingMask = 2047;
+											PortalCamObjs [j].GetComponent<Camera> ().cullingMask = 2011;
 
 											for (int k = 0; k < PortalFunctionality.ExcludedObjsFromRender.Length; k++)
 												if (PortalFunctionality.ExcludedObjsFromRender [k].Obj)

@@ -412,7 +412,8 @@ PlayerSettings:
   metroCertificateIssuer: DefaultCompany
   metroCertificateNotAfter: 80d7b550fad1d301
   metroApplicationDescription: HoloLensPortals
-  wsaImages: {}
+  wsaImages:
+    2228324: Assets/Icons/logo310px.png
   metroTileShortName: Portals for HoloLens
   metroCommandLineArgsFile: 
   metroTileShowName: 0
